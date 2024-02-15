@@ -68,7 +68,7 @@ spec:
           - "--readiness-probe-port={{.Values.app.readinessProbe.port}}"
           - "--readiness-probe-path={{.Values.app.readinessProbe.path}}"
             # trust
-          - "--trust-namespace={{.Values.app.trust.namespace}}"
+          - "--trust-namespace={{ tpl .Values.app.trust.namespace . }}"
             # webhook
           - "--webhook-host={{.Values.app.webhook.host}}"
           - "--webhook-port={{.Values.app.webhook.port}}"
